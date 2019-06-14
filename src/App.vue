@@ -1,28 +1,31 @@
-<template>
+<template lang="html">
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="root">
+      <the-header class="root__header" />
+      <main>
+        <drug-manager class="root__drugManager" />
+      </main>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import './assets/style/normalize.css';
+import './assets/style/variables/all.css';
+import './assets/style/global.css';
+import TheHeader from './components/TheHeader.vue';
+import DrugManager from './components/DrugManager.vue';
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    TheHeader,
+    DrugManager,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.root {
+  display: grid;
 }
 </style>

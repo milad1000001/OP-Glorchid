@@ -1,0 +1,9 @@
+:root {
+  /* backgroundColor */
+  --background : #fcfcfc;
+  /* BoxShadow */
+  --BoxShadow:0 0 30px 0 rgba(0,0,0,0.1);
+  /* StatusColor */
+  --active:var(--green);
+  --deactive:var(--red);
+}

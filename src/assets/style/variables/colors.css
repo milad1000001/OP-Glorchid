@@ -1,0 +1,18 @@
+:root{
+  /* Grenn Cataloge */
+  --green:#4CA14A;
+  --green--yellow:#ECF87F;
+  --green--lime:#81B622;
+  --green--olive:#3d550c;
+/* Lighter&Darker */
+  --green--lighter:#d7f4e7;
+  --green--darken:#70CCA2;
+  /* RedsColors */
+  --red:#D44034;
+  --red--lighter:#f1e6e6;
+/* PrimaryColors */
+  --primaryColor:var(--background);
+/* Black&Gray */
+  --gray:rgba(164, 164, 164, 0.15);
+  --black:rgb(52, 52, 52);
+}
