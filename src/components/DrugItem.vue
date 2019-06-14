@@ -22,7 +22,7 @@
         v-else
         class="drugItem__stateIcon"
       />
-      {{isActive ? 'Active' : 'Deactive'}}
+      {{isActive ? 'Active' : 'Inactive'}}
     </div>
     <div class="drugItem__cell drugItem__name">
       {{name}}
