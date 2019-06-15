@@ -1,10 +1,10 @@
 <template>
-  <div class="DrugFilter">
-    <form class="DrugFilter__form">
+  <div class="drugFilter">
+    <form class="drugFilter__form">
       <input
         v-model="query"
         type="text"
-        class="DrugFilter__TextInput"
+        class="drugFilter__TextInput"
         placeholder="Search for drug name..."
         autofocus
       >
@@ -32,17 +32,17 @@ export default {
 </script>
 
 <style scoped>
-.DrugFilter{
+.drugFilter{
 
 }
-.DrugFilter__form{
+.drugFilter__form{
   display: flex;
   align-content: center;
   justify-content: space-around;
   text-align: center;
   height: 2.5rem;
 }
-.DrugFilter__TextInput {
+.drugFilter__TextInput {
   height: 100%;
   width: 100%;
   border: 0px;
@@ -50,7 +50,7 @@ export default {
   padding: 0.25em 1em;
   background-color: transparent;
 }
-.DrugFilter__TextInput:focus {
+.drugFilter__TextInput:focus {
   box-shadow: none;
   outline: none;
   border-bottom-color: var(--active);

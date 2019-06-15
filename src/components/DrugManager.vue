@@ -4,6 +4,9 @@
       class="drugManager__search"
       @search="search"
     />
+    <drug-detail
+      :drug-items="drugItems"
+    />
     <drug-list
       :drug-items="drugItemsToRender"
       @changeState="changeState"
@@ -14,11 +17,14 @@
 <script>
 import DrugList from './DrugList.vue';
 import DrugFilter from './DrugFilter.vue';
+import DrugDetail from './DrugDetail.vue';
+
 export default {
   name: 'DrugManager',
   components: {
     DrugList,
-    DrugFilter
+    DrugFilter,
+    DrugDetail
   },
   data() {
     return {
@@ -27,6 +33,11 @@ export default {
           name: 'Bevasizumab',
           simcardCount: 23,
           isActive: true
+        },
+        {
+          name: 'Asetaminofen',
+          simcardCount: 12,
+          isActive: false
         },
         {
           name: 'Dalfyra',
@@ -76,9 +87,9 @@ export default {
       this.drugItemsToRender = this.drugItems.filter((drugItem) => {
         return drugItem.name.toLowerCase().includes(query);
       });
-    }
+    },
   }
-};
+}
 </script>
 
 <style scoped>

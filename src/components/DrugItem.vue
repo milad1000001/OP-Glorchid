@@ -22,13 +22,13 @@
         v-else
         class="drugItem__stateIcon"
       />
-      {{isActive ? 'Active' : 'Inactive'}}
+      {{ isActive ? 'Active' : 'Inactive' }}
     </div>
     <div class="drugItem__cell drugItem__name">
-      {{name}}
+      {{ name }}
     </div>
     <div class="drugItem__cell drugItem__simCount">
-      {{simcardCount}}
+      {{ simcardCount }}
     </div>
   </li>
 </template>
