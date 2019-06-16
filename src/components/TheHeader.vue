@@ -1,7 +1,9 @@
 <template>
   <header class="header">
     <div class="header__top">
-      <div class="header__username">Welcome Mr.Username</div>
+      <div class="header__username">
+        Welcome Mr.Username
+      </div>
     </div>
     <div>
       <img
@@ -24,23 +26,23 @@ export default {
 </script>
 
 <style scoped>
-.header__username{
-margin-left: .7em;
+.header__username {
+  margin-left: 0.7em;
 }
-.header__top{
+.header__top {
   position: relative;
-  color:var(--active);
+  color: var(--active);
   text-align: left;
   background-color: #fff;
-  padding: .5rem;
+  padding: 0.5rem;
   margin-bottom: 1em;
 }
-.header__username:before{
+.header__username:before {
   content: '';
   position: absolute;
   background-color: var(--active);
   top: 5px;
-  left:10px;
+  left: 10px;
   bottom: 5px;
   width: 2px;
 }

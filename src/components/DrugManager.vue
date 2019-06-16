@@ -1,5 +1,8 @@
 <template>
-  <div class="drugManager">
+  <div
+    v-if="drugItems.length"
+    class="drugManager"
+  >
     <drug-filter
       class="drugManager__search"
       @search="search"
@@ -28,43 +31,7 @@ export default {
   },
   data() {
     return {
-      drugItems: [
-        {
-          name: 'Bevasizumab',
-          simcardCount: 23,
-          isActive: true
-        },
-        {
-          name: 'Asetaminofen',
-          simcardCount: 12,
-          isActive: false
-        },
-        {
-          name: 'Dalfyra',
-          simcardCount: 32,
-          isActive: false
-        },
-        {
-          name: 'Diclofenac',
-          simcardCount: 15,
-          isActive: true
-        },
-        {
-          name: 'Alterzumab',
-          simcardCount: 42,
-          isActive: true
-        },
-        {
-          name: 'Cinnatropin',
-          simcardCount: 10,
-          isActive: false
-        },
-        {
-          name: 'Cinnora',
-          simcardCount: 19,
-          isActive: true
-        },
-      ],
+      drugItems: [],
       drugItemsToRender: []
     };
   },
@@ -75,6 +42,12 @@ export default {
         this.drugItemsToRender = [...this.drugItems];
       }
     }
+  },
+  mounted() {
+    this.$http('/drugs.json')
+      .then(({ data }) => {
+        this.drugItems = data;
+      });
   },
   methods: {
     changeState({ activeState, name }) {

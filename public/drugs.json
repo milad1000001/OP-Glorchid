@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Bevacizumab",
+    "simcardCount": 23,
+    "isActive": true
+  },
+  {
+    "name": "Asetaminofen",
+    "simcardCount": 12,
+    "isActive": false
+  },
+  {
+    "name": "Dalfyra",
+    "simcardCount": 32,
+    "isActive": false
+  },
+  {
+    "name": "Diclofenac",
+    "simcardCount": 15,
+    "isActive": true
+  },
+  {
+    "name": "Alterzumab",
+    "simcardCount": 42,
+    "isActive": true
+  },
+  {
+    "name": "Cinnatropin",
+    "simcardCount": 10,
+    "isActive": false
+  },
+  {
+    "name": "Cinnora",
+    "simcardCount": 19,
+    "isActive": true
+  },
+  {
+    "name": "Bevacizumab",
+    "simcardCount": 23,
+    "isActive": true
+  },
+  {
+    "name": "Asetaminofen",
+    "simcardCount": 12,
+    "isActive": false
+  },
+  {
+    "name": "Dalfyra",
+    "simcardCount": 32,
+    "isActive": false
+  },
+  {
+    "name": "Diclofenac",
+    "simcardCount": 15,
+    "isActive": true
+  },
+  {
+    "name": "Alterzumab",
+    "simcardCount": 42,
+    "isActive": true
+  },
+  {
+    "name": "Cinnatropin",
+    "simcardCount": 10,
+    "isActive": false
+  },
+  {
+    "name": "Cinnora",
+    "simcardCount": 19,
+    "isActive": true
+  },
+  {
+    "name": "Bevacizumab",
+    "simcardCount": 23,
+    "isActive": true
+  },
+  {
+    "name": "Asetaminofen",
+    "simcardCount": 12,
+    "isActive": false
+  },
+  {
+    "name": "Dalfyra",
+    "simcardCount": 32,
+    "isActive": false
+  },
+  {
+    "name": "Diclofenac",
+    "simcardCount": 15,
+    "isActive": true
+  },
+  {
+    "name": "Alterzumab",
+    "simcardCount": 42,
+    "isActive": true
+  },
+  {
+    "name": "Cinnatropin",
+    "simcardCount": 10,
+    "isActive": false
+  },
+  {
+    "name": "Cinnora",
+    "simcardCount": 19,
+    "isActive": true
+  },
+  {
+    "name": "Bevacizumab",
+    "simcardCount": 23,
+    "isActive": true
+  },
+  {
+    "name": "Asetaminofen",
+    "simcardCount": 12,
+    "isActive": false
+  },
+  {
+    "name": "Dalfyra",
+    "simcardCount": 32,
+    "isActive": false
+  },
+  {
+    "name": "Diclofenac",
+    "simcardCount": 15,
+    "isActive": true
+  },
+  {
+    "name": "Alterzumab",
+    "simcardCount": 42,
+    "isActive": true
+  },
+  {
+    "name": "Cinnatropin",
+    "simcardCount": 10,
+    "isActive": false
+  },
+  {
+    "name": "Cinnora",
+    "simcardCount": 19,
+    "isActive": true
+  }
+]

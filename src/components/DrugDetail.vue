@@ -1,17 +1,11 @@
 <template>
   <div class="drugDetails">
     <div class="drugDetails__detail">
-      Active: {{ SumIsActive }}, using 21 SimCards
+      Active: {{ activeDrugLength }}, using {{ activeSim }} SimCards
     </div>
     <div class="drugDetails__detail">
-      Inactive: {{ SumIsInctive }}, using 28 SimCards<br>
+      Inactive: {{ inActiveDrugLength }}, using {{ inativeSim }} SimCards<br>
     </div>
-    <!-- <div class="drugDetails__detail">
-      Active drugs: {{ activeDrugsCount }}, using {{ activeDrugSimcardCount }} sim cards
-    </div>
-    <div class="drugDetails__detail">
-      Inactive drugs: {{ InactiveDrugsCount }}, using {{ InactiveDrugSimcardCount }} sim cards
-    </div> -->
   </div>
 </template>
 
@@ -28,15 +22,45 @@ export default {
     return {};
   },
   computed: {
-    SumIsActive() {
+    activeDrug() {
+      return this.drugItems.filter(drugitem => {
+        return drugitem.isActive;
+      });
+    },
+    inActiveDrug() {
+      return this.drugItems.filter(drugitem => {
+        return !drugitem.isActive;
+      });
+    },
+    activeDrugLength() {
       return this.drugItems.filter(drugitem => {
         return drugitem.isActive;
       }).length;
     },
-    SumIsInctive() {
+    inActiveDrugLength() {
       return this.drugItems.filter(drugitem => {
         return !drugitem.isActive;
       }).length;
+    },
+    activeSimList() {
+      return this.activeDrug.map((drugItem) => {
+          return drugItem.simcardCount;
+      });
+    },
+    inactiveSimList() {
+      return this.inActiveDrug.map((drugItem) => {
+          return drugItem.simcardCount;
+      });
+    },
+    activeSim() {
+      return this.activeSimList.reduce((lastSimcart, currentSimcart) => {
+        return lastSimcart + currentSimcart;
+      });
+    },
+    inativeSim() {
+      return this.inactiveSimList.reduce((lastSimcart, currentSimcart) => {
+        return lastSimcart + currentSimcart;
+      });
     },
   },
 };
