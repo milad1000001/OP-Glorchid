@@ -3,9 +3,9 @@
     <div class="drugDetails__detail">
       Active: {{ activeDrugLength }}, using {{ activeSim }} SimCards
     </div>
-    <div class="drugDetails__detail">
+    <!-- <div class="drugDetails__detail">
       Inactive: {{ inActiveDrugLength }}, using {{ inativeSim }} SimCards<br>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -79,6 +79,5 @@ export default {
 
 .drugDetails__detail {
   margin-bottom: 0.25em;
-
 }
 </style>

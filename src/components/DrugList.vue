@@ -2,10 +2,8 @@
   <ul class="drugList">
     <drug-item
       v-for="drugItem in drugItems"
-      :key="drugItem.name"
-      :name="drugItem.name"
-      :simcard-count="drugItem.simcardCount"
-      :is-active="drugItem.isActive"
+      :key="drugItem.id"
+      :drug="drugItem"
       class="drugList__item"
       @changeState="changeState"
     />
@@ -31,10 +29,10 @@ export default {
     };
   },
   methods: {
-    changeState({ activeState, name }) {
+    changeState({ activeState, id }) {
       this.$emit('changeState',{
         'activeState': activeState,
-        'name': name
+        'id': id
       });
     }
   }

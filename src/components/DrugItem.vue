@@ -1,34 +1,34 @@
 <template>
   <li
     :class="{
-      'drugItem--isActive': isActive,
-      'drugItem--isDeactive': !isActive,
+      'drugItem--isActive': drug.isActive,
+      'drugItem--isDeactive': !drug.isActive,
     }"
     class="drugItem"
     @click="chengeState()"
   >
     <div
       :class="{
-        'drugItem__state--isActive': isActive,
-        'drugItem__state--isDeactive': !isActive
+        'drugItem__state--isActive': drug.isActive,
+        'drugItem__state--isDeactive': !drug.isActive
       }"
       class="drugItem__cell drugItem__state"
     >
       <icon-checkmark
-        v-if="isActive"
+        v-if="drug.isActive"
         class="drugItem__stateIcon"
       />
       <icon-crossmark
         v-else
         class="drugItem__stateIcon"
       />
-      {{ isActive ? 'Active' : 'Inactive' }}
+      {{ drug.isActive ? 'Active' : 'Inactive' }}
     </div>
     <div class="drugItem__cell drugItem__name">
-      {{ name }}
+      {{ drug.name }}
     </div>
     <div class="drugItem__cell drugItem__simCount">
-      {{ simcardCount }}
+      {{ drug.simcardCount }}
     </div>
   </li>
 </template>
@@ -44,17 +44,9 @@ export default {
     IconCrossmark,
   },
   props: {
-    name: {
-      type: String,
-      required: true
-    },
-    simcardCount: {
-      type: Number,
-      required: true
-    },
-    isActive: {
-      type: Boolean,
-      required: true
+    drug:{
+      type:Object,
+      required:true,
     }
   },
   data() {
@@ -62,10 +54,24 @@ export default {
   },
   methods: {
     chengeState() {
-      this.$emit('changeState',{
-        'activeState' :!this.isActive,
-        'name':this.name
+      this.promptIfIsActive(() => {
+        this.$emit('changeState',{
+          'activeState' :!this.drug.isActive,
+          'id':this.drug.id,
+        });
       });
+    },
+    promptIfIsActive(func) {
+      if (this.drug.isActive) {
+        this.$dialog.confirm(`Are you sure about deactiving ${this.drug.name}?`, {
+          cancelText: 'Cancel',
+           okText: 'Yes',
+        }).then((dialog) => {
+          func();
+        });
+      } else {
+        func();
+      }
     }
   }
 };

@@ -23,6 +23,21 @@ export default {
   },
 };
 </script>
+<style>
+.dg-btn {
+  border-radius: 5px;
+}
+.dg-btn--ok {
+  background-color: var(--green);
+  border: none;
+  color: white;
+}
+.dg-btn--cancel {
+  background-color: transparent;
+  border: none;
+  color: var(--black);
+}
+</style>
 
 <style scoped>
 .root {

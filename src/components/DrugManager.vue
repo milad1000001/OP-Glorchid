@@ -50,9 +50,9 @@ export default {
       });
   },
   methods: {
-    changeState({ activeState, name }) {
+    changeState({ activeState, id }) {
       var drugItemToChangeState = this.drugItems.find((drugItem) => {
-        return drugItem.name === name;
+        return drugItem.id === id;
       });
       drugItemToChangeState.isActive = activeState;
     },
