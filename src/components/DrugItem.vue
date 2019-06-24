@@ -62,16 +62,13 @@ export default {
       });
     },
     promptIfIsActive(func) {
-      if (this.drug.isActive) {
-        this.$dialog.confirm(`Are you sure about deactiving ${this.drug.name}?`, {
+      // if (this.drug.isActive) {
+        this.$dialog.confirm(`You are about to ${this.drug.isActive ? 'Inactive' : 'Active'} ${this.drug.name}, Are you sure?`, {
           cancelText: 'Cancel',
            okText: 'Yes',
         }).then((dialog) => {
           func();
         });
-      } else {
-        func();
-      }
     }
   }
 };
