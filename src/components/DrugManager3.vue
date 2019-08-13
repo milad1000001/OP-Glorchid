@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import apiService from '../services/api';
 import DrugList from './DrugList.vue';
 import DrugFilter from './DrugFilter.vue';
 import DrugDetail from './DrugDetail.vue';
@@ -38,17 +37,12 @@ export default {
     this.refreshList();
   },
   methods: {
-    refreshList() {
-      apiService.getList().then(drugs => {
-        this.drugItems = drugs;
-      });
-    },
     changeState({ activeState, id }) {
       var drugItemToChangeState = this.drugItems.find(drugItem => {
         return drugItem.DrugId === id;
       });
-      drugItemToChangeState.isActive = activeState;
-      this.getProperRequest(activeState)(id).then(() => {
+      drugItemToChangeState.IsActive = activeState;
+      this.getProperRequest()(id).then(() => {
         this.refreshList();
       });
     },
@@ -58,9 +52,10 @@ export default {
       }
       return apiService.deactiveDrug;
     },
+    },
     search(query) {
       this.drugItemsToRender = this.drugItems.filter(drugItem => {
-        return drugItem.name.toLowerCase().includes(query);
+        return drugItem.DrugName.toLowerCase().includes(query);
       });
     },
   },

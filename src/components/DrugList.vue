@@ -2,7 +2,7 @@
   <ul class="drugList">
     <drug-item
       v-for="drugItem in drugItems"
-      :key="drugItem.id"
+      :key="drugItem.DrugId"
       :drug="drugItem"
       class="drugList__item"
       @changeState="changeState"

@@ -1,35 +1,25 @@
 <template>
   <li
     :class="{
-      'drugItem--isActive': drug.isActive,
-      'drugItem--isDeactive': !drug.isActive,
+      'drugItem--IsActive': drug.IsActive,
+      'drugItem--isDeactive': !drug.IsActive,
     }"
     class="drugItem"
     @click="chengeState()"
   >
     <div
       :class="{
-        'drugItem__state--isActive': drug.isActive,
-        'drugItem__state--isDeactive': !drug.isActive
+        'drugItem__state--IsActive': drug.IsActive,
+        'drugItem__state--isDeactive': !drug.IsActive
       }"
       class="drugItem__cell drugItem__state"
     >
-      <icon-checkmark
-        v-if="drug.isActive"
-        class="drugItem__stateIcon"
-      />
-      <icon-crossmark
-        v-else
-        class="drugItem__stateIcon"
-      />
-      {{ drug.isActive ? 'Active' : 'Inactive' }}
+      <icon-checkmark v-if="drug.IsActive" class="drugItem__stateIcon" />
+      <icon-crossmark v-else class="drugItem__stateIcon" />
+      {{ drug.IsActive ? 'Active' : 'Inactive' }}
     </div>
-    <div class="drugItem__cell drugItem__name">
-      {{ drug.name }}
-    </div>
-    <div class="drugItem__cell drugItem__simCount">
-      {{ drug.simcardCount }}
-    </div>
+    <div class="drugItem__cell drugItem__name">{{ drug.DrugName }}</div>
+    <div class="drugItem__cell drugItem__simCount">{{ drug.TotalRequiredSimCards }}</div>
   </li>
 </template>
 
@@ -44,10 +34,10 @@ export default {
     IconCrossmark,
   },
   props: {
-    drug:{
-      type:Object,
-      required:true,
-    }
+    drug: {
+      type: Object,
+      required: true,
+    },
   },
   data() {
     return {};
@@ -55,39 +45,44 @@ export default {
   methods: {
     chengeState() {
       this.promptIfIsActive(() => {
-        this.$emit('changeState',{
-          'activeState' :!this.drug.isActive,
-          'id':this.drug.id,
+        this.$emit('changeState', {
+          activeState: !this.drug.IsActive,
+          id: this.drug.DrugId,
         });
       });
     },
     promptIfIsActive(func) {
-      // if (this.drug.isActive) {
-        this.$dialog.confirm(`You are about to ${this.drug.isActive ? 'Inactive' : 'Active'} ${this.drug.name}, Are you sure?`, {
-          cancelText: 'Cancel',
-           okText: 'Yes',
-        }).then((dialog) => {
+      // if (this.drug.IsActive) {
+      this.$dialog
+        .confirm(
+          `You are about to ${this.drug.IsActive ? 'Inactive' : 'Active'} ${
+            this.drug.DrugName
+          }, Are you sure?`,
+          {
+            cancelText: 'Cancel',
+            okText: 'Yes',
+          }
+        )
+        .then(dialog => {
           func();
         });
-    }
-  }
+    },
+  },
 };
-
 </script>
 
 <style scoped>
-
 .drugItem {
   position: relative;
   user-select: none;
 }
-.drugItem:before{
+.drugItem:before {
   content: '';
-  border:1px solid var(--active);
+  border: 1px solid var(--active);
   position: absolute;
-  left:4px;
-  top:4px;
-  bottom:4px;
+  left: 4px;
+  top: 4px;
+  bottom: 4px;
 }
 .drugItem__cell {
   display: flex;
@@ -111,30 +106,30 @@ export default {
   padding-right: 1em;
   flex-grow: 0;
 }
-.drugItem__state--isActive {
-  color:var(--active);
+.drugItem__state--IsActive {
+  color: var(--active);
 }
-.drugItem__state--isActive:before{
+.drugItem__state--IsActive:before {
   content: '';
-  border:1px solid var(--active);
+  border: 1px solid var(--active);
   position: absolute;
-  left:4px;
-  top:4px;
-  bottom:4px;
+  left: 4px;
+  top: 4px;
+  bottom: 4px;
 }
-.drugItem__state--isDeactive:before{
+.drugItem__state--isDeactive:before {
   content: '';
-  border:1px solid var(--deactive);
+  border: 1px solid var(--deactive);
   position: absolute;
-  left:4px;
-  top:4px;
-  bottom:4px;
+  left: 4px;
+  top: 4px;
+  bottom: 4px;
 }
-.drugItem--isActive:hover {
+.drugItem--IsActive:hover {
   background-color: var(--green--lighter);
 }
 .drugItem__state--isDeactive {
-  color:var(--red);
+  color: var(--red);
 }
 .drugItem--isDeactive:hover {
   background-color: var(--red--lighter);

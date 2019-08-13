@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import apiService from '../services/api';
 import DrugList from './DrugList.vue';
 import DrugFilter from './DrugFilter.vue';
 import DrugDetail from './DrugDetail.vue';
@@ -35,32 +34,22 @@ export default {
     },
   },
   mounted() {
-    this.refreshList();
+    this.$http(
+      'http://OP-F4L-MIT05:85/api/SalesTrackingPlanning/GetPlannedDrugs'
+    ).then(({ data }) => {
+      this.drugItems = data;
+    });
   },
   methods: {
-    refreshList() {
-      apiService.getList().then(drugs => {
-        this.drugItems = drugs;
-      });
-    },
     changeState({ activeState, id }) {
       var drugItemToChangeState = this.drugItems.find(drugItem => {
         return drugItem.DrugId === id;
       });
-      drugItemToChangeState.isActive = activeState;
-      this.getProperRequest(activeState)(id).then(() => {
-        this.refreshList();
-      });
-    },
-    getProperRequest(state) {
-      if (state) {
-        return apiService.activeDrug;
-      }
-      return apiService.deactiveDrug;
+      drugItemToChangeState.IsActive = activeState;
     },
     search(query) {
       this.drugItemsToRender = this.drugItems.filter(drugItem => {
-        return drugItem.name.toLowerCase().includes(query);
+        return drugItem.DrugName.toLowerCase().includes(query);
       });
     },
   },

@@ -24,32 +24,32 @@ export default {
   computed: {
     activeDrug() {
       return this.drugItems.filter(drugitem => {
-        return drugitem.isActive;
+        return drugitem.IsActive;
       });
     },
     inActiveDrug() {
       return this.drugItems.filter(drugitem => {
-        return !drugitem.isActive;
+        return !drugitem.IsActive;
       });
     },
     activeDrugLength() {
       return this.drugItems.filter(drugitem => {
-        return drugitem.isActive;
+        return drugitem.IsActive;
       }).length;
     },
     inActiveDrugLength() {
       return this.drugItems.filter(drugitem => {
-        return !drugitem.isActive;
+        return !drugitem.IsActive;
       }).length;
     },
     activeSimList() {
       return this.activeDrug.map((drugItem) => {
-          return drugItem.simcardCount;
+          return drugItem.TotalRequiredSimCards;
       });
     },
     inactiveSimList() {
       return this.inActiveDrug.map((drugItem) => {
-          return drugItem.simcardCount;
+          return drugItem.TotalRequiredSimCards;
       });
     },
     activeSim() {

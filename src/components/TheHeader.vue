@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: '',
+  name: 'TheHeader',
   components: {},
   data() {
     return {};

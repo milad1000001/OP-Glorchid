@@ -1,44 +1,43 @@
-[
-  {
-    "id" : 1,
-    "name": "Bevacizumab",
-    "simcardCount": 23,
-    "isActive": true
-  },
-  {
-    "id" : 2,
-    "name": "Asetaminofen",
-    "simcardCount": 12,
-    "isActive": false
-  },
-  {
-    "id" : 3,
-    "name": "Dalfyra",
-    "simcardCount": 32,
-    "isActive": false
-  },
-  {
-    "id" : 4,
-    "name": "Diclofenac",
-    "simcardCount": 15,
-    "isActive": true
-  },
-  {
-    "id" : 5,
-    "name": "Alterzumab",
-    "simcardCount": 42,
-    "isActive": true
-  },
-  {
-    "id" : 6,
-    "name": "Cinnatropin",
-    "simcardCount": 10,
-    "isActive": false
-  },
-  {
-    "id" : 7,
-    "name": "DrugName",
-    "simcardCount": 2,
-    "isActive": false
-  }
+[{
+        "DrugId": 1,
+        "DrugName": "Bevacizumab",
+        "TotalRequiredSimCards": 23,
+        "isActive": true
+    },
+    {
+        "DrugId": 2,
+        "DrugName": "Asetaminofen",
+        "TotalRequiredSimCards": 12,
+        "isActive": false
+    },
+    {
+        "DrugId": 3,
+        "DrugName": "Dalfyra",
+        "TotalRequiredSimCards": 32,
+        "isActive": false
+    },
+    {
+        "DrugId": 4,
+        "DrugName": "Diclofenac",
+        "TotalRequiredSimCards": 15,
+        "isActive": true
+    },
+    {
+        "DrugId": 5,
+        "DrugName": "Alterzumab",
+        "TotalRequiredSimCards": 42,
+        "isActive": true
+    },
+    {
+        "DrugId": 6,
+        "DrugName": "Cinnatropin",
+        "TotalRequiredSimCards": 10,
+        "isActive": false
+    },
+    {
+        "DrugId": 7,
+        "DrugName": "DrugDrugName",
+        "TotalRequiredSimCards": 2,
+        "isActive": false
+    }
 ]

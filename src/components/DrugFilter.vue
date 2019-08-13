@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: '',
+  name: 'DrugFilter',
   components: {
 
   },
